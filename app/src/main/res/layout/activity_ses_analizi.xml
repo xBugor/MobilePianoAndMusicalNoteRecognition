@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#B4DBE0"
+    tools:context=".kaydedilen_sarkilar">
+
+    <!-- Üstteki Başlık -->
+    <!-- Ses Seviyesi Gösterge Çubuğu -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#327F87"
+        android:gravity="center_vertical|center_horizontal"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#327F87"
+            android:drawablePadding="10dp"
+            android:shadowColor="#000000"
+            android:shadowDx="5"
+            android:shadowDy="5"
+            android:shadowRadius="2"
+            android:text="@string/ses_anal_z"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/volumeProgressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="100dp"
+        android:progressDrawable="@drawable/custom_progress_bar"
+        android:max="100"
+        android:progress="50" />
+
+    <ImageButton
+        android:id="@+id/back1Button2"
+        android:layout_width="55dp"
+        android:layout_height="49dp"
+        android:layout_gravity="start"
+        android:layout_margin="5dp"
+        android:background="#00000000"
+        app:srcCompat="@drawable/back_to" />
+
+    <!-- Frekans Metni -->
+    <TextView
+        android:id="@+id/frequencyTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="370dp"
+        android:layout_marginTop="65dp"
+        android:text="@string/frequency_0_hz"
+        android:textColor="#000"
+        android:textSize="24sp" />
+
+    <!-- Analiz ve Durdurma Butonları -->
+    <ImageButton
+        android:id="@+id/btn_select_song"
+        android:layout_width="54dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center|bottom"
+        android:backgroundTint="#00000000"
+        android:contentDescription="@string/select_file"
+        app:srcCompat="@drawable/ic_file_select" />
+
+    <LinearLayout
+        style="?android:attr/buttonBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|bottom"
+        android:layout_marginBottom="180dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/startAnalysisButton"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#66B6BF"
+            android:paddingStart="25dp"
+            android:paddingEnd="25dp"
+            android:text="@string/start_analysis"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/stopAnalysisButton"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="#6BFF6F61"
+            android:paddingStart="25dp"
+            android:paddingEnd="25dp"
+            android:text="@string/stop_analysis"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/startFileCompareButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|bottom"
+        android:layout_marginBottom="60dp"
+        android:backgroundTint="#5CFFA726"
+        android:paddingStart="25dp"
+        android:paddingEnd="25dp"
+        android:text="@string/start_file_compare"
+        android:textColor="#000000"
+        android:textSize="18sp" />
+
+    <ImageButton
+        android:id="@+id/insertNota"
+        android:layout_width="43dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center|bottom"
+        android:layout_marginBottom="115dp"
+        android:layout_marginLeft="30dp"
+        android:background="#00000000"
+        android:paddingStart="25dp"
+        android:paddingEnd="25dp"
+        app:srcCompat="@drawable/insert" />
+
+    <ImageButton
+        android:id="@+id/icerigiKaydet"
+        android:layout_width="39dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center|bottom"
+        android:layout_marginBottom="115dp"
+        android:layout_marginLeft="-30dp"
+        android:background="#00000000"
+        android:paddingStart="25dp"
+        android:paddingEnd="25dp"
+        app:srcCompat="@drawable/save" />
+
+    <ScrollView
+        android:id="@+id/frequencyScrollView"
+        android:layout_width="240dp"
+        android:layout_height="145dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="215dp"
+        android:background="@drawable/rounded_scrollview">
+
+        <TextView
+            android:id="@+id/frequencyListTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top|start"
+            android:lineSpacingExtra="5dp"
+            android:padding="10dp"
+            android:scrollbars="vertical"
+            android:textColor="#000"
+            android:textSize="23sp" />
+    </ScrollView>
+
+    <ScrollView
+        android:id="@+id/frequencyScrollViewRight"
+        android:layout_width="240dp"
+        android:layout_height="145dp"
+        android:layout_gravity="end"
+        android:layout_marginTop="215dp"
+        android:layout_marginEnd="120dp"
+        android:background="@drawable/rounded_scrollview">
+
+        <TextView
+            android:id="@+id/frequencyListTextViewRight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top|start"
+            android:lineSpacingExtra="5dp"
+            android:padding="10dp"
+            android:scrollbars="vertical"
+            android:textColor="#000"
+            android:textSize="23sp" />
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|left"
+        android:layout_marginBottom="-18dp"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:layout_marginLeft="170dp"
+        android:text="Analiz Edilen Notalar:" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|right"
+        android:layout_marginBottom="-18dp"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:layout_marginRight="190dp"
+        android:text="İstenilen Notalar:" />
+
+</FrameLayout>
